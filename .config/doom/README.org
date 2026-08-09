@@ -2,8 +2,6 @@ d#+title: Configuración de Doom Emacs
 
 * Tabla de contenidos :toc:
 - [[#comandos-básicos-de-configuración][Comandos Básicos de configuración]]
-- [[#instalación][Instalación]]
-  - [[#warnings-de-doom-doctor][Warnings de Doom Doctor]]
 - [[#initel][init.el]]
   - [[#terminal][Terminal]]
 - [[#tangle-config][Tangle: Config]]
@@ -19,55 +17,6 @@ d#+title: Configuración de Doom Emacs
   OJO: no carga cosas que estén en ~config.el~, para eso se necesita reiniciar.
 - *~doom gc~*
   Para limpiar los paquetes y módulos que no estén cargados.
-
-* Instalación
-
-#+begin_src bash
-
-git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
-~/.config/emacs/bin/doom install
-
-#+end_src
-
-añadir doom al path: =~/.config/emacs/bin=
-
-Leer la guía de primeros pasos: [[https://github.com/doomemacs/doomemacs/blob/master/docs/getting_started.org][Doom Emacs: Getting Started Guide]]
-
-** Warnings de Doom Doctor
-
-Cuando se instaló en /Fedora Workstation 43/, doom doctor indicó la falta de
-'Simbols Nerd Font', 'shellcheck' y un compilador para markdown. Para cada una
-hay que correr los siguientes:
-
-- *Symbols Nerd Font Mono*
-  Instalar los archivos de la fuente
-
-  #+begin_src bash
-
-  mkdir -p ~/.local/share/fonts/NerdFonts && \
-  curl -Lo ~/.local/share/fonts/NerdFonts/SymbolsNerdFontMono-Regular.ttf \
-    "https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/NerdFontsSymbolsOnly/SymbolsNerdFontMono-Regular.ttf" && \
-  fc-cache -fv
-
-  #+end_src
-
-- *Markdown compiler*
-  Fedora ya tiene instalado ~python3-markdown~ con el nombre de ~markdown_py~,
-  pero Doom Emacs lo busca como ~markdown~. Por lo tanto, se hizo un symlink:
-
-  #+begin_src bash
-
-  sudo ln -s /usr/bin/markdown_py /usr/local/bin/markdown
-
-  #+end_src
-
-- *ShellCheck*
-
-  #+begin_src bash
-
-  sudo dnf install ShellCheck
-
-  #+end_src
 
 * init.el
 
