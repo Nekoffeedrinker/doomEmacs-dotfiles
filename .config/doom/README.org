@@ -5,6 +5,8 @@ d#+title: Configuración de Doom Emacs
 - [[#instalación][Instalación]]
   - [[#warnings-de-doom-doctor][Warnings de Doom Doctor]]
 - [[#terminal][Terminal]]
+- [[#tangle-config][Tangle: Config]]
+- [[#tangle-packages][Tangle: Packages]]
 
 * Comandos Básicos de configuración
 - *~doom doctor~*
@@ -73,3 +75,15 @@ De las cuatro disponibles (eshell, shell, term, vterm), elegí
   terminal no sirven.
 - ~vterm~ porque es un emulador de la terminal del sistema, por lo que es
   igualita a la que ya uso en Kitty.
+
+* Tangle: Config
+
+#+begin_src elisp :tangle .config/doom/config.el
+
+#+end_src
+
+* Tangle: Packages
+
+#+begin_src elisp :tangle .config/doom/packages.el
+
+#+end_src
