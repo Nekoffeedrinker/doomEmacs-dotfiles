@@ -47,7 +47,9 @@
        ;; tabs              ; barra de pestañas
        ;; treemacs          ; explorador de archivos lateral avanzado
        ;; unicode           ; activar soporte extendido para caracteres unicode
-       (vc-gutter +pretty)  ; indicar los cambios segun git en el margen derecho
+       (vc-gutter           ; indicar los cambios segun git en el margen derecho
+        ;;  +pretty
+        )
        vi-tilde-fringe      ; poner `~` para líneas vacias al final (terminó el documento)
        ;; window-select     ; salto entre ventanas de manera visual (asignando letras o números)
        workspaces           ; activar función de workspases mediante TAB
