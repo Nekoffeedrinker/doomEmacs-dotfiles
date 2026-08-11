@@ -15,11 +15,11 @@
   - [[#numeración-de-lineas][Numeración de lineas]]
   - [[#frame][Frame]]
   - [[#banner-de-bienvenida][Banner de bienvenida]]
+- [[#utilidades][Utilidades]]
+  - [[#visor-pdf][Visor PDF]]
 - [[#org-mode][Org-mode]]
   - [[#directorioscarpetas-de-org-mode][Directorios/carpetas de org-mode]]
   - [[#plugin-org-auto-tangle][Plugin: org-auto-tangle]]
-- [[#utilidades][Utilidades]]
-  - [[#visor-pdf][Visor PDF]]
 - [[#comentarios-originales][Comentarios Originales]]
   - [[#config][Config]]
   - [[#packages][Packages]]
@@ -295,6 +295,22 @@ Para cambiar las letras grandes de DOOM EMACS por una imagen:
 Actualmente no se hace tangle porque es para referencia (temporalmente).
 
 
+* Utilidades
+** Visor PDF
+
+En init-tools activa ~pdf~. Luego tendrás que instalar el server 'epdfinfo' el
+cual viene integrado en 'pdf-tools'.
+ - Linux normal: usar el comando ~M-x pdf-tools-install~.
+ - NixOS: añadir ~pkgs.emacsPackages.pdf-tools~ a la lista de paquetes.
+
+Después, se añade lo siguiente a Emacs
+#+begin_src elisp :tangle packages.el
+(package! pdf-tools :built-in 'prefer)
+#+end_src
+
+Esto le dice a Doom que use la versión que ya instaló Nix.
+
+
 * Org-mode
 ** Directorios/carpetas de org-mode
 
@@ -322,21 +338,6 @@ Se trata de un plugin que automatiza la acción de 'org-babel-tangle'
   (setq org-auto-tangle-default t))
 #+end_src
 
-
-* Utilidades
-** Visor PDF
-
-En init-tools activa ~pdf~. Luego tendrás que instalar el server 'epdfinfo' el
-cual viene integrado en 'pdf-tools'.
- - Linux normal: usar el comando ~M-x pdf-tools-install~.
- - NixOS: añadir ~pkgs.emacsPackages.pdf-tools~ a la lista de paquetes.
-
-Después, se añade lo siguiente a Emacs
-#+begin_src elisp :tangle packages.el
-(package! pdf-tools :built-in 'prefer)
-#+end_src
-
-Esto le dice a Doom que use la versión que ya instaló Nix.
 
 * Comentarios Originales
 ** Config
