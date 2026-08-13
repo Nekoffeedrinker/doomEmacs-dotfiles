@@ -37,6 +37,7 @@
   - [[#plugin-org-roam-bibtex-orb][Plugin: org-roam-bibtex (orb)]]
   - [[#plugin-org-auto-tangle][Plugin: org-auto-tangle]]
 - [[#lenguajes][Lenguajes]]
+  - [[#latex][LaTeX]]
   - [[#typst][Typst]]
   - [[#nix][Nix]]
   - [[#kdl-niri][KDL (Niri)]]
@@ -106,6 +107,7 @@ De las cuatro disponibles (eshell, shell, term, vterm), elegí:
 - Activar ~pdf~. REVISAR: [[*Visor PDF][Visor PDF]].
 ** Lang
 - Activar ~(org +roam)~.
+- Activar ~(latex +latexmk +lsp)~.
 - Activar ~(nix +lsp +tree-sitter)~.
 - Activar ~(sh +fish)~.
 
@@ -732,6 +734,26 @@ Se trata de un plugin que automatiza la acción de 'org-babel-tangle'
 #+end_src
 
 * Lenguajes
+** LaTeX
+
+Primero hay que instalar ~miktex~ y ~texlab~ (distribución y lsp).
+
+Activar =latex= con las banderas '+latexmk' y '+lsp' en el ~init.el~. Ej:
+#+begin_src elisp
+(latex
+ +latexmk
+ +lsp)
+#+end_src
+
+Y hay que configurar el viewer.
+#+begin_src elisp :tangle config.el
+
+(setq +latex-viewers '(pdf-tools okular evince))
+
+#+end_src
+
+Hay que resaltar que se está haciendo uso del [[*Visor PDF][Visor PDF]].
+
 ** Typst
 Acorde a esta [[https://forum.typst.app/t/are-there-any-best-practices-for-how-to-do-typst-in-emacs/850][discusión del foro de Typst]], hay que instalar 'typst-ts-mode'
 (tree-sitter), 'tinymist' (LSP) y activar 'eglot'. Por mi parte, también

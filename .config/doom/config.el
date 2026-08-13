@@ -198,6 +198,8 @@
   :config
   (setq org-auto-tangle-default t))
 
+(setq +latex-viewers '(pdf-tools okular evince))
+
 ;; Asociar los archivos
 (add-to-list 'auto-mode-alist '("\\.typ\\'" . typst-ts-mode))
 
