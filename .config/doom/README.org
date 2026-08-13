@@ -87,6 +87,7 @@
 - Activar ~zen~.
 ** Editor
 - Activar ~(format +onsave)~.
+- Activar ~multiple-cursors~.
 - Activar ~word-wrap~ (para lenguajes de programación).
 ** Terminal
 De las cuatro disponibles (eshell, shell, term, vterm), elegí:
