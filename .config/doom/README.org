@@ -107,6 +107,7 @@ De las cuatro disponibles (eshell, shell, term, vterm), elegí:
 ** Lang
 - Activar ~(org +journal +roam)~.
 - Activar ~(nix +lsp +tree-sitter)~.
+- Activar ~(sh +fish)~.
 
 * Definir rutas y archivos
 
