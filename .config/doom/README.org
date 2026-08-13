@@ -82,6 +82,7 @@
 - Activar ~smooth-scroll~.
 - Activar ~treemacs~.
 - Desactivar '+pretty' en ~vc-gutter~ porque me gustan los indicadores toscos.
+- Activar ~zen~.
 ** Editor
 - Activar ~(format +onsave)~.
 - Activar ~word-wrap~ (para lenguajes de programación).
