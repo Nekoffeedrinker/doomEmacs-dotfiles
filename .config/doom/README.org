@@ -81,6 +81,7 @@
 - Activar ~indent-guides~.
 - Activar ~ligatures~.
 - Activar ~smooth-scroll~.
+- Activar ~tabs~.
 - Activar ~treemacs~.
 - Desactivar '+pretty' en ~vc-gutter~ porque me gustan los indicadores toscos.
 - Activar ~zen~.
