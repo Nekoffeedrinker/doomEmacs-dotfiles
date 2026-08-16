@@ -21,7 +21,8 @@
   - [[#frame][Frame]]
   - [[#banner-de-bienvenida][Banner de bienvenida]]
 - [[#comportamiento][Comportamiento]]
-  - [[#no-pedir-confirmación][No pedir confirmación]]
+  - [[#fish-shell-en-doom-emacs][Fish Shell en Doom Emacs]]
+  - [[#no-pedir-confirmación-al-cerrar][No pedir confirmación al cerrar]]
 - [[#utilidades][Utilidades]]
   - [[#visor-pdf][Visor PDF]]
   - [[#dired-y-dirvish][Dired y dirvish]]
@@ -369,7 +370,27 @@ Para cambiar las letras grandes de DOOM EMACS por una imagen:
 Actualmente no se hace tangle porque es para referencia (temporalmente).
 
 * Comportamiento
-** No pedir confirmación
+** Fish Shell en Doom Emacs
+
+Emacs asume que nuestro sistema usa bash como shell predeterminada. Si Doom
+Doctor detecta que usamos una shell que no es POSIX-compliant, nos advertirá que
+podría haber problemas en algunas funcionalidades.
+
+Para arreglar esto, hay que decirle explícitamente a Doom Emacs que use bash
+para comandos internos, y que nos deje usar fish en vterm.
+
+#+begin_src elisp :tangle config.el
+
+;;; Usar bash para comandos internos de Emacs (evita el warning)
+(setq shell-file-name (executable-find "bash"))
+
+;;; Mantener fish en las terminales integradas (vterm, etc.)
+(setq-default vterm-shell "/run/current-system/sw/bin/fish")
+(setq-default explicit-shell-file-name "/run/current-system/sw/bin/fish")
+
+#+end_src
+
+** No pedir confirmación al cerrar
 
 #+begin_src elisp :tangle config.el
 (setq confirm-kill-emacs nil)
