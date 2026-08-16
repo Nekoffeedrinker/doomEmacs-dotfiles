@@ -657,10 +657,7 @@ Pasando de lo básico, también se puede configurar una vista de gráfico de nod
 (muy similar a obsidian).
 
 #+begin_src elisp :tangle config.el
-(setq org-roam-graph-viewer
-      (lambda (file)
-        (start-process "min" nil "/usr/bin/min"
-                       (concat "file://" file))))
+(setq org-roam-graph-viewer "/run/current-system/sw/bin/epiphany")
 #+end_src
 
 ** Plugin: org-roam-bibtex (orb)

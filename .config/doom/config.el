@@ -166,10 +166,7 @@
 (setq org-roam-directory dir/orgRoam
       org-roam-dailies-directory "journal/")
 
-(setq org-roam-graph-viewer
-      (lambda (file)
-        (start-process "min" nil "/usr/bin/min"
-                       (concat "file://" file))))
+(setq org-roam-graph-viewer "/run/current-system/sw/bin/epiphany")
 
 ;; Decirle a 'citar' dónde está la bibliografía (necesario para orb)
 (setq! citar-bibliography (list file/bibliografia))
