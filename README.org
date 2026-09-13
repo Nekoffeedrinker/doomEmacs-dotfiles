@@ -120,7 +120,7 @@ De las cuatro disponibles (eshell, shell, term, vterm), elegí:
 
 (defvar file/bibliografia (expand-file-name "referencias.bib"  dir/cosasEmacs))
 (defvar file/diccionario  (expand-file-name "mis-palabras.pws" dir/cosasEmacs))
-(defvar dir/orgRoam       (expand-file-name "Org-roam"         dir/docsPersonal))
+(defvar dir/orgRoam       (expand-file-name "Notas en org-roam" dir/docsPersonal))
 ;; (defvar dir/diario        (expand-file-name "Diario-org/"      dir/docsPersonal))
 
 ;; Crear directorios si no existen
@@ -697,13 +697,13 @@ Preparar el archivo de referencias:
 Luego, hay que activar ~biblio~ en el apartado tools del ~init.el~
 
 Y también hay que cargar un plugin
-#+begin_src elisp :tangle packages.el
+#+begin_src elisp :tangle-no packages.el
 (package! org-roam-bibtex)
 #+end_src
 
 Y configurar el plugin
 
-#+begin_src elisp :tangle config.el
+#+begin_src elisp :tangle-no config.el
 
 ;; Decirle a 'citar' dónde está la bibliografía (necesario para orb)
 (setq! citar-bibliography (list file/bibliografia))

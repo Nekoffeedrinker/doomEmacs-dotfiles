@@ -9,8 +9,6 @@
 
 (package! org-fancy-priorities)
 
-(package! org-roam-bibtex)
-
 (package! org-auto-tangle)
 
 (package! typst-ts-mode :recipe (:host codeberg :repo "meow_king/typst-ts-mode"))
