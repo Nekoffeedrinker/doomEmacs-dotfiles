@@ -106,8 +106,8 @@
 (setq shell-file-name (executable-find "bash"))
 
 ;;; Mantener fish en las terminales integradas (vterm, etc.)
-(setq-default vterm-shell "/run/current-system/sw/bin/fish")
-(setq-default explicit-shell-file-name "/run/current-system/sw/bin/fish")
+(setq-default vterm-shell "/usr/bin/fish")
+(setq-default explicit-shell-file-name "/usr/bin/fish")
 
 (setq confirm-kill-emacs nil)
 

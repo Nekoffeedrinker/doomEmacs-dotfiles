@@ -379,14 +379,30 @@ podría haber problemas en algunas funcionalidades.
 Para arreglar esto, hay que decirle explícitamente a Doom Emacs que use bash
 para comandos internos, y que nos deje usar fish en vterm.
 
+IMPORTANTE: Dependiendo si usamos NixOS o alguna distro FHS, deberemos cambiar
+la ruta del binario de fish.
+
 #+begin_src elisp :tangle config.el
 
 ;;; Usar bash para comandos internos de Emacs (evita el warning)
 (setq shell-file-name (executable-find "bash"))
 
+#+end_src
+
+**NixOS**
+
+#+begin_src elisp :tangle-no config.el
 ;;; Mantener fish en las terminales integradas (vterm, etc.)
 (setq-default vterm-shell "/run/current-system/sw/bin/fish")
 (setq-default explicit-shell-file-name "/run/current-system/sw/bin/fish")
+#+end_src
+
+**Fedora**
+
+#+begin_src elisp :tangle config.el
+;;; Mantener fish en las terminales integradas (vterm, etc.)
+(setq-default vterm-shell "/usr/bin/fish")
+(setq-default explicit-shell-file-name "/usr/bin/fish")
 
 #+end_src
 
