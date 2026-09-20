@@ -5,14 +5,15 @@
 
 (defvar file/bibliografia (expand-file-name "referencias.bib"  dir/cosasEmacs))
 (defvar file/diccionario  (expand-file-name "mis-palabras.pws" dir/cosasEmacs))
-(defvar dir/orgRoam       (expand-file-name "Notas en org-roam" dir/docsPersonal))
+;; (defvar dir/orgRoam       (expand-file-name "Notas en org-roam" dir/docsPersonal))
 ;; (defvar dir/diario        (expand-file-name "Diario-org/"      dir/docsPersonal))
 
 ;; Crear directorios si no existen
 (dolist (dir (list dir/cosasEmacs
                    dir/docsPersonal
                    ;; dir/diario
-                   dir/orgRoam))
+                   ;; dir/orgRoam
+                   ))
   (make-directory dir t))
 
 ;; Crear archivos vacíos si no existen
@@ -169,11 +170,6 @@
 (use-package! org-fancy-priorities
   :hook (org-mode . org-fancy-priorities-mode)
   :config (setq org-fancy-priorities-list '("❗" "⬆" "⬇")))
-
-(setq org-roam-directory dir/orgRoam
-      org-roam-dailies-directory "journal/")
-
-(setq org-roam-graph-viewer "/run/current-system/sw/bin/epiphany")
 
 (use-package! org-auto-tangle
   :defer t

@@ -120,14 +120,15 @@ De las cuatro disponibles (eshell, shell, term, vterm), elegí:
 
 (defvar file/bibliografia (expand-file-name "referencias.bib"  dir/cosasEmacs))
 (defvar file/diccionario  (expand-file-name "mis-palabras.pws" dir/cosasEmacs))
-(defvar dir/orgRoam       (expand-file-name "Notas en org-roam" dir/docsPersonal))
+;; (defvar dir/orgRoam       (expand-file-name "Notas en org-roam" dir/docsPersonal))
 ;; (defvar dir/diario        (expand-file-name "Diario-org/"      dir/docsPersonal))
 
 ;; Crear directorios si no existen
 (dolist (dir (list dir/cosasEmacs
                    dir/docsPersonal
                    ;; dir/diario
-                   dir/orgRoam))
+                   ;; dir/orgRoam
+                   ))
   (make-directory dir t))
 
 ;; Crear archivos vacíos si no existen
@@ -674,7 +675,7 @@ En ~init.el~ ubicamos =org= y añadimos la bandera '+roam'. Ej:
 #+end_src
 
 Ahora hay que configurar el directorio de Roam
-#+begin_src elisp :tangle config.el
+#+begin_src elisp :tangle-no config.el
 (setq org-roam-directory dir/orgRoam
       org-roam-dailies-directory "journal/")
 #+end_src
@@ -693,7 +694,7 @@ entradas donde hablo de mí personalmente con las entradas de mis proyectos.
 Pasando de lo básico, también se puede configurar una vista de gráfico de nodos
 (muy similar a obsidian).
 
-#+begin_src elisp :tangle config.el
+#+begin_src elisp :tangle-no config.el
 (setq org-roam-graph-viewer "/run/current-system/sw/bin/epiphany")
 #+end_src
 
