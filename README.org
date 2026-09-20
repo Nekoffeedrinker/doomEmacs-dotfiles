@@ -694,9 +694,21 @@ entradas donde hablo de mí personalmente con las entradas de mis proyectos.
 Pasando de lo básico, también se puede configurar una vista de gráfico de nodos
 (muy similar a obsidian).
 
+IMPORTANTE: Dependiendo si usamos NixOS o alguna distro FHS, deberemos cambiar
+la ruta del binario de epiphany.
+
+**NixOS**
+
 #+begin_src elisp :tangle-no config.el
 (setq org-roam-graph-viewer "/run/current-system/sw/bin/epiphany")
 #+end_src
+
+**Fedora**
+
+#+begin_src elisp :tangle-no config.el
+(setq org-roam-graph-viewer "/usr/bin/epiphany")
+#+end_src
+
 
 ** Plugin: org-roam-bibtex (orb)
 
@@ -841,11 +853,23 @@ Y configurar las opciones
 ;; Hacer funcionar typst-preview
 (use-package! typst-preview
   :config
-  (setq typst-preview-executable "/run/current-system/sw/bin/tinymist")
+
+  ;; Para NixOS
+  ;; (setq typst-preview-executable "/run/current-system/sw/bin/tinymist")
+  ;; ------------------------------
+  ;; Para Fedora
+  (setq typst-preview-executable "/usr/local/bin/tinymist")
+
   (setq typst-preview-browser "default")
   ;; Utilzar Gnome Web
   (setq browse-url-browser-function 'browse-url-generic)
-  (setq browse-url-generic-program "/run/current-system/sw/bin/epiphany")
+
+  ;; Para NixOS
+  ;; (setq browse-url-generic-program "/run/current-system/sw/bin/epiphany")
+  ;; ------------------------------
+  ;; Para Fedora
+  (setq browse-url-generic-program "/usr/bin/epiphany")
+
 )
 
 ;; Insertar citas de forma facil

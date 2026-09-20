@@ -205,11 +205,23 @@
 ;; Hacer funcionar typst-preview
 (use-package! typst-preview
   :config
-  (setq typst-preview-executable "/run/current-system/sw/bin/tinymist")
+
+  ;; Para NixOS
+  ;; (setq typst-preview-executable "/run/current-system/sw/bin/tinymist")
+  ;; ------------------------------
+  ;; Para Fedora
+  (setq typst-preview-executable "/usr/local/bin/tinymist")
+
   (setq typst-preview-browser "default")
   ;; Utilzar Gnome Web
   (setq browse-url-browser-function 'browse-url-generic)
-  (setq browse-url-generic-program "/run/current-system/sw/bin/epiphany")
+
+  ;; Para NixOS
+  ;; (setq browse-url-generic-program "/run/current-system/sw/bin/epiphany")
+  ;; ------------------------------
+  ;; Para Fedora
+  (setq browse-url-generic-program "/usr/bin/epiphany")
+
 )
 
 ;; Insertar citas de forma facil
