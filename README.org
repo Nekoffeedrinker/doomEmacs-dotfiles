@@ -792,10 +792,14 @@ Activar =latex= con las banderas '+latexmk' y '+lsp' en el ~init.el~. Ej:
  +lsp)
 #+end_src
 
-Y hay que configurar el viewer.
+Y hay que configurar las opciones
 #+begin_src elisp :tangle config.el
 
-(setq +latex-viewers '(pdf-tools okular evince))
+;; Cual viewer usar. Si no está, pasa al siguente
+(setq +latex-viewers '(pdf-tools papers okular))
+
+;; Abrir siempre en latex
+(setq TeX-default-mode 'LaTeX-mode)
 
 #+end_src
 
@@ -858,7 +862,7 @@ Y configurar las opciones
   ;; (setq typst-preview-executable "/run/current-system/sw/bin/tinymist")
   ;; ------------------------------
   ;; Para Fedora
-  (setq typst-preview-executable "/usr/local/bin/tinymist")
+  (setq typst-preview-executable "/home/denis/.local/bin/tinymist")
 
   (setq typst-preview-browser "default")
   ;; Utilzar Gnome Web

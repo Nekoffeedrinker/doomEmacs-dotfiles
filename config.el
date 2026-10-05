@@ -177,7 +177,11 @@
   :config
   (setq org-auto-tangle-default t))
 
-(setq +latex-viewers '(pdf-tools okular evince))
+;; Cual viewer usar. Si no está, pasa al siguente
+(setq +latex-viewers '(pdf-tools papers okular))
+
+;; Abrir siempre en latex
+(setq TeX-default-mode 'LaTeX-mode)
 
 ;; Asociar los archivos
 (add-to-list 'auto-mode-alist '("\\.typ\\'" . typst-ts-mode))
@@ -210,7 +214,7 @@
   ;; (setq typst-preview-executable "/run/current-system/sw/bin/tinymist")
   ;; ------------------------------
   ;; Para Fedora
-  (setq typst-preview-executable "/usr/local/bin/tinymist")
+  (setq typst-preview-executable "/home/denis/.local/bin/tinymist")
 
   (setq typst-preview-browser "default")
   ;; Utilzar Gnome Web
