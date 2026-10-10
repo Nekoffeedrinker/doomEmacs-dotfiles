@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: dialogue{}
+# key: dial
+# --
+\begin{dialogue}{${1:Personaje}}
+$0
+\end{dialogue}

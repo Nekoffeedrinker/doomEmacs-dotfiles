@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: dialogue[]{}
+# key: dialo
+# --
+\begin{dialogue}[${1:Parenthetical}]{${2:Personaje}}
+$0
+\end{dialogue}
