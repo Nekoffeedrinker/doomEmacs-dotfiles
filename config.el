@@ -183,6 +183,11 @@
 ;; Abrir siempre en latex
 (setq TeX-default-mode 'LaTeX-mode)
 
+(after! eglot
+  (add-to-list 'eglot-server-programs
+               '((latex-mode tex-mode LaTeX-mode)
+                 . ("sh" "-c" "texlab 2>/tmp/texlab-stderr.log"))))
+
 ;; Asociar los archivos
 (add-to-list 'auto-mode-alist '("\\.typ\\'" . typst-ts-mode))
 

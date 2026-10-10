@@ -801,6 +801,11 @@ Y hay que configurar las opciones
 ;; Abrir siempre en latex
 (setq TeX-default-mode 'LaTeX-mode)
 
+(after! eglot
+  (add-to-list 'eglot-server-programs
+               '((latex-mode tex-mode LaTeX-mode)
+                 . ("sh" "-c" "texlab 2>/tmp/texlab-stderr.log"))))
+
 #+end_src
 
 Hay que resaltar que se está haciendo uso del [[*Visor PDF][Visor PDF]].
